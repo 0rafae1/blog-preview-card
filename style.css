@@ -12,9 +12,51 @@
   font-display: swap;
 }
 
+:root {
+    --color-primary: hsl(47, 88%, 63%);
+    --color-ink: hsl(0, 0%, 7%);
+    --color-ink-muted: hsl(0, 0%, 42%);
+    --color-surface: hsl(0, 0%, 100%);
+    --color-link: hsl(228, 45%, 44%);
+
+    --color-brand: var(--color-primary);
+    --color-page-bg: var(--color-primary);
+    --color-category: var(--color-primary);
+
+    --color-card-bg: var(--color-surface);
+
+    --color-card-border: var(--color-ink);
+    --color-card-shadow: var(--color-ink);
+    --color-heading: var(--color-ink);
+
+    --color-body-text: var(--color-ink-muted);
+
+    --font-size-label: 0.875rem;
+    --font-size-body: 1rem;
+    --font-size-heading: 1.5rem;
+    --font-weight-regular: 500;
+    --font-weight-bold: 800;
+    --line-height-default: 1.5;
+    --font-size-attribution: 0.6875rem;
+
+    --width-card: min(100%, 24rem);
+    --min-height-card: 32.625rem;
+    --gap-card-inner: 1.5rem;
+    --gap-content-inner: 0.75rem;
+    --padding-card: 1.5rem;
+    --padding-category: 0.25rem 0.75rem;
+    --size-avatar: 2rem;
+
+    --radius-card: 1.25rem;
+    --radius-cover: 0.625rem;
+    --radius-category: 0.25rem;
+    --border-card: 1px solid var(--color-card-border);
+    --shadow-card: 8px 8px 0px var(--color-card-shadow);
+}
+
 body {
     font-family: 'Figtree', sans-serif;
-    background-color: hsl(47, 88%, 63%);
+    background-color: var(--color-page-bg);
 }
 
 main {
@@ -28,78 +70,78 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: hsl(0, 0%, 100%);
-    width: min(100%, 384px);
-    min-height: 522px;
-    border: 1px solid hsl(0, 0%, 7%);
-    border-radius: 20px;
-    box-shadow: 8px 8px 0px hsl(0, 0%, 7%);
-    padding: 24px;
-    gap: 24px;
+    background-color: var(--color-card-bg);
+    width: var(--width-card);
+    min-height: var(--min-height-card);
+    border: var(--border-card);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    padding: var(--padding-card);
+    gap: var(--gap-card-inner);
 }
 
 .blog-card__body {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: var(--gap-card-inner);
 }
 
 .blog-card__cover {
     width: 100%;
-    border-radius: 10px;
+    border-radius: var(--radius-cover);
     display: block;
 }
 
 .blog-card__content{
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: var(--gap-content-inner);
     align-items: flex-start;
 }
 
 .blog-card__category {
     display: inline-block;
-    font-size: 0.875rem;
-    line-height: 1.5;
-    font-weight: 800;
-    border-radius: 4px;
-    background-color: hsl(47, 88%, 63%);
-    padding: 4px 12px;
+    font-size: var(--font-size-label);
+    line-height: var(--line-height-default);
+    font-weight: var(--font-weight-bold);
+    border-radius: var(--radius-category);
+    background-color: var(--color-category);
+    padding: var(--padding-category);
 }
 
 .blog-card__date {
-    font-size: 0.875rem;
-    line-height: 1.5;
+    font-size: var(--font-size-label);
+    line-height: var(--line-height-default);
 }
 
 .blog-card__title {
-    font-size: 1.5rem;
-    line-height: 1.5;
-    font-weight: 800;
-    color: hsl(0, 0%, 7%);
+    font-size: var(--font-size-heading);
+    line-height: var(--line-height-default);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-heading);
 }
 
 .blog-card__excerpt {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: hsl(0, 0%, 42%);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-default);
+    color: var(--color-body-text);
 }
 
 .blog-card__author {
     display: flex;
     align-items: center;
-    font-weight: 800;
-    font-size: 0.875rem;
-    gap: 12px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-label);
+    gap: var(--gap-content-inner);
 }
 .blog-card__avatar {
-    width: 32px;
+    width: var(--size-avatar);
 }
 
 .attribution { 
-    font-size: 0.6875rem; 
+    font-size: var(--font-size-attribution); 
     text-align: center; 
 }
 .attribution a { 
-    color: hsl(228, 45%, 44%); 
+    color: var(--color-link); 
 }
