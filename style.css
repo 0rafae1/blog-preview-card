@@ -5,11 +5,11 @@
 }
 
 @font-face {
-  font-family: 'Figtree';
-  src: url('./assets/fonts/Figtree-VariableFont_wght.ttf') format('truetype');
-  font-weight: 500 800;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Figtree";
+    src: url("./assets/fonts/Figtree-VariableFont_wght.ttf") format("truetype");
+    font-weight: 500 800;
+    font-style: normal;
+    font-display: swap;
 }
 
 :root {
@@ -19,22 +19,20 @@
     --color-surface: hsl(0, 0%, 100%);
     --color-link: hsl(228, 45%, 44%);
 
-    --color-brand: var(--color-primary);
     --color-page-bg: var(--color-primary);
     --color-category: var(--color-primary);
-
+    --color-category-hover: var(--color-ink-muted);
     --color-card-bg: var(--color-surface);
-
     --color-card-border: var(--color-ink);
     --color-card-shadow: var(--color-ink);
     --color-heading: var(--color-ink);
-
+    --color-heading-hover: var(--color-primary);
     --color-body-text: var(--color-ink-muted);
+    --color-author-hover: var(--color-primary);
 
     --font-size-label: 0.875rem;
     --font-size-body: 1rem;
     --font-size-heading: 1.5rem;
-    --font-weight-regular: 500;
     --font-weight-bold: 800;
     --line-height-default: 1.5;
     --font-size-attribution: 0.6875rem;
@@ -52,10 +50,12 @@
     --radius-category: 0.25rem;
     --border-card: 1px solid var(--color-card-border);
     --shadow-card: 8px 8px 0px var(--color-card-shadow);
+
+    --transition-hover: 0.2s ease;
 }
 
 body {
-    font-family: 'Figtree', sans-serif;
+    font-family: "Figtree", sans-serif;
     background-color: var(--color-page-bg);
 }
 
@@ -92,7 +92,7 @@ main {
     display: block;
 }
 
-.blog-card__content{
+.blog-card__content {
     display: flex;
     flex-direction: column;
     gap: var(--gap-content-inner);
@@ -107,11 +107,13 @@ main {
     border-radius: var(--radius-category);
     background-color: var(--color-category);
     padding: var(--padding-category);
-    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color var(--transition-hover);
 }
 
 .blog-card__category:hover {
-    background-color: var(--color-ink-muted);
+    background-color: var(--color-category-hover);
 }
 
 .blog-card__date {
@@ -124,11 +126,12 @@ main {
     line-height: var(--line-height-default);
     font-weight: var(--font-weight-bold);
     color: var(--color-heading);
-    cursor: pointer;
+    text-decoration: none;
+    transition: color var(--transition-hover);
 }
 
 .blog-card__title:hover {
-    color: var(--color-primary);
+    color: var(--color-heading-hover);
 }
 
 .blog-card__excerpt {
@@ -143,21 +146,23 @@ main {
     font-weight: var(--font-weight-bold);
     font-size: var(--font-size-label);
     gap: var(--gap-content-inner);
-    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-hover);
 }
 
 .blog-card__author:hover {
-    color: var(--color-primary);
+    color: var(--color-author-hover);
 }
 
 .blog-card__avatar {
     width: var(--size-avatar);
 }
 
-.attribution { 
-    font-size: var(--font-size-attribution); 
-    text-align: center; 
+.attribution {
+    font-size: var(--font-size-attribution);
+    text-align: center;
 }
-.attribution a { 
-    color: var(--color-link); 
+.attribution a {
+    color: var(--color-link);
 }
