@@ -126,11 +126,16 @@ main {
     line-height: var(--line-height-default);
     font-weight: var(--font-weight-bold);
     color: var(--color-heading);
-    text-decoration: none;
     transition: color var(--transition-hover);
 }
 
-.blog-card__title:hover {
+.blog-card__title a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-hover);
+}
+
+.blog-card__title a:hover {
     color: var(--color-heading-hover);
 }
 
@@ -165,4 +170,12 @@ main {
 }
 .attribution a {
     color: var(--color-link);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .blog-card__category,
+    .blog-card__title a,
+    .blog-card__author {
+        transition: none;
+    }
 }
